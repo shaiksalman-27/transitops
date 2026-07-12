@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — TransitOps</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dash-shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark"></span>TransitOps</div>
+    <nav class="side-links">
+      <a href="dashboard.html" class="active"><span class="dot"></span>Overview</a>
+      <a href="#"><span class="dot"></span>Fleet</a>
+      <a href="#"><span class="dot"></span>Routes</a>
+      <a href="#"><span class="dot"></span>Drivers</a>
+      <a href="#"><span class="dot"></span>Alerts</a>
+      <a href="#"><span class="dot"></span>Reports</a>
+      <a href="#"><span class="dot"></span>Settings</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="avatar">JD</div>
+      <div>
+        <div style="font-weight:600;">Jordan Diaz</div>
+        <div style="color:var(--text-dim); font-size:0.78rem;">Dispatcher</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-top">
+      <div>
+        <h1>Operations overview</h1>
+        <p>Sunday, July 12 — live fleet status</p>
+      </div>
+      <div class="live-badge">Live</div>
+    </div>
+
+    <!-- Signature stat cards: split-flap board style -->
+    <div class="stat-grid" id="statGrid">
+      <div class="flap-card">
+        <div class="label">Active vehicles</div>
+        <div class="flap-digits" data-value="128"></div>
+        <div class="flap-trend trend-up">↑ 4 vs yesterday</div>
+      </div>
+      <div class="flap-card">
+        <div class="label">On-time rate</div>
+        <div class="flap-digits" data-value="96" data-suffix="%"></div>
+        <div class="flap-trend trend-up">↑ 1.2%</div>
+      </div>
+      <div class="flap-card">
+        <div class="label">Active routes</div>
+        <div class="flap-digits" data-value="34"></div>
+        <div class="flap-trend trend-down">↓ 2 offline</div>
+      </div>
+      <div class="flap-card">
+        <div class="label">Open alerts</div>
+        <div class="flap-digits" data-value="03"></div>
+        <div class="flap-trend trend-down">↑ 1 new</div>
+      </div>
+    </div>
+
+    <div class="dash-panels">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Fleet status</h2>
+          <a href="#">View all</a>
+        </div>
+        <div class="fleet-row">
+          <span class="veh">#014</span><span>Harbor Loop</span>
+          <span class="status-pill status-onroute">On route</span><span>2 min to next stop</span>
+        </div>
+        <div class="fleet-row">
+          <span class="veh">#007</span><span>Cedar &amp; Main</span>
+          <span class="status-pill status-boarding">Boarding</span><span>Departs now</span>
+        </div>
+        <div class="fleet-row">
+          <span class="veh">#022</span><span>Riverside Express</span>
+          <span class="status-pill status-delayed">Delayed</span><span>+6 min behind</span>
+        </div>
+        <div class="fleet-row">
+          <span class="veh">#031</span><span>North Terminal</span>
+          <span class="status-pill status-onroute">On route</span><span>9 min to next stop</span>
+        </div>
+        <div class="fleet-row">
+          <span class="veh">#045</span><span>Cedar &amp; Main</span>
+          <span class="status-pill status-onroute">On route</span><span>14 min to next stop</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Recent alerts</h2>
+          <a href="#">View all</a>
+        </div>
+        <div class="alert-item">
+          <span class="alert-dot"></span>
+          <div><h4>Route 22 delayed +6 min</h4><p>Traffic incident near Riverside Bridge</p></div>
+        </div>
+        <div class="alert-item warn">
+          <span class="alert-dot"></span>
+          <div><h4>Vehicle #009 maintenance due</h4><p>Scheduled service window in 2 days</p></div>
+        </div>
+        <div class="alert-item info">
+          <span class="alert-dot"></span>
+          <div><h4>Driver shift change at 6:00 PM</h4><p>Route 14 handoff to evening shift</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
